@@ -17,11 +17,6 @@ protocol PlannerViewModelDelegate: class {
 
 class PlannerViewModel {
     
-    // MARK: - Private Atributes
-    private let NUM_MAX_VACATION_DAYS: Int = 30
-    private let NUM_MIN_VACATION_DAYS: Int = 1
-    private let MAX_VALUE_YEAR: Int = 9999
-    
     private var selectedWeathers: [WeatherViewModel] = [WeatherViewModel]()
     private var dailyClimateList: [DailyClimate]?
     private var selectedCity: CityViewModel?
@@ -30,6 +25,7 @@ class PlannerViewModel {
     private var weatherList: [Weather]?
     private var cityList: [City]?
     private var apiPlanner: VacationPlannerAPI
+    private var managerPlannerBusiness: PlannerBusinessManager
     
     // MARK: - Public Atributes
     weak var delegate: PlannerViewModelDelegate?
@@ -50,15 +46,12 @@ class PlannerViewModel {
     }
     
     //MARK: - Init
-    init(api: VacationPlannerAPI = VacationPlannerAPI()) {
+    init(api: VacationPlannerAPI = VacationPlannerAPI(), manager: PlannerBusinessManager = PlannerBusinessManager()) {
         apiPlanner = api
+        managerPlannerBusiness = manager
     }
     
     // MARK: - Public Functions
-    func getPlannerInfo() {
-        getCities(nextStep: getWeathers)
-    }
-    
     func addSelectedWeather(from index: Int) {
         selectedWeathers.append(weartherViewModelList[index])
     }
@@ -72,17 +65,31 @@ class PlannerViewModel {
     }
     
     func getVacationDatesFormated() -> String {
-        let listClimateByDate = groupListOfDailyClimateByDate(from: getFilteredByWeatherDailyClimateList())
+        guard let days = Int(daysOfVacation) else { return ""}
         
-        let listOfStringsDate: [String] = listClimateByDate.compactMap { element in
-            if let first = element.first, let last = element.last {
-                return first.descriptionDate + " to " + last.descriptionDate
-            }
-            return nil
+        return managerPlannerBusiness.getDatesFormated(from: dailyClimateViewModelList, with: days, selectedWeathers: selectedWeathers)
+    }
+    
+    func validateYear(_ year: String) -> Bool {
+        selectedYear = year
+        return managerPlannerBusiness.validate(year: year)
+    }
+    
+    func validateDaysOfVacation(_ days: String) -> Bool {
+        daysOfVacation = days
+        return managerPlannerBusiness.validate(days: days)
+    }
+    
+    func validateEnteredInfo() {
+        if let del = delegate {
+            del.allInfoIs(ready: validateYear(selectedYear)
+                && validateDaysOfVacation(daysOfVacation)
+                && selectedCity != nil && !selectedWeathers.isEmpty)
         }
-        return listOfStringsDate.reduce("") { itemOne, itemTwo  in
-            return itemOne + "\n" + "✅" + itemTwo + "\n"
-        }
+    }
+    
+    func getPlannerInfo() {
+        getCities(nextStep: getWeathers)
     }
     
     func getDailyClimates() {
@@ -101,62 +108,7 @@ class PlannerViewModel {
         }
     }
     
-    func validateYear(_ year: String) -> Bool {
-        selectedYear = year
-        let currentYear = Calendar.current.component(.year, from: Date())
-        if let intYear = Int(year) {
-            return intYear >= currentYear && intYear <= MAX_VALUE_YEAR
-        }
-        return false
-    }
-    
-    func validateDaysOfVacation(_ days: String) -> Bool {
-        daysOfVacation = days
-        if let intDays = Int(days) {
-            return intDays > NUM_MIN_VACATION_DAYS && intDays <= NUM_MAX_VACATION_DAYS
-        }
-        return false
-    }
-    
-    func validateEnteredInfo() {
-        if let del = delegate {
-            del.allInfoIs(ready: validateYear(selectedYear)
-                && validateDaysOfVacation(daysOfVacation)
-                && selectedCity != nil && !selectedWeathers.isEmpty)
-        }
-    }
-    
     // MARK: - Private Functions
-    private func getFilteredByWeatherDailyClimateList() -> [DailyClimateViewModel] {
-        let mappedSelectedWeathers = selectedWeathers.map{ $0.name }
-        return dailyClimateViewModelList.filter { mappedSelectedWeathers.contains($0.weather) }
-    }
-    
-    private func groupListOfDailyClimateByDate(from list: [DailyClimateViewModel]) -> [[DailyClimateViewModel]] {
-        
-        guard let numDays = Int(daysOfVacation) else { return  [[DailyClimateViewModel]]() }
-        var listOfGroups = [[DailyClimateViewModel]]()
-        var group = [DailyClimateViewModel]()
-        let last = list.count - 1
-        
-        for (i, dailyClimate) in list.enumerated() {
-            if i+1 <= last, datesAreSequencial(firstDate: dailyClimate.date, secondDate: list[i+1].date) {
-                group.isEmpty ? group.append(contentsOf: [dailyClimate, list[i+1]]) :  group.append(list[i+1])
-            } else if group.count >= numDays {
-                listOfGroups.append(group)
-                group.removeAll()
-            } else {
-                group.removeAll()
-            }
-        }
-        return listOfGroups
-    }
-    
-    private func datesAreSequencial(firstDate: Date?, secondDate: Date?) -> Bool {
-        guard let firstDt = firstDate, let secondDt = secondDate else { return false }
-        return firstDt.isOneDayBefore(date: secondDt)
-    }
-    
     private func getCities(nextStep: @escaping (()->(Void)) = {}) {
         apiPlanner.getCities() { [weak self] result in
             guard let self = self else { return }

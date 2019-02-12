@@ -26,7 +26,7 @@ class PlannerViewControllerSpec: QuickSpec {
                     viewModel.getPlannerInfo()
                 }
                 
-                it("Testing data in collections") {
+                it("Should update the data in collections") {
                     guard let firstOfMainViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PlannerViewController") as? PlannerViewController else { return }
                     plannerController = firstOfMainViewController
                     

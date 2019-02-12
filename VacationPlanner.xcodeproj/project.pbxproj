@@ -14,6 +14,7 @@
 		784DAA07221205BB006E50B8 /* PlannerViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA06221205BB006E50B8 /* PlannerViewModelSpec.swift */; };
 		784DAA0922121A94006E50B8 /* MockPlannerViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA0822121A94006E50B8 /* MockPlannerViewModelDelegate.swift */; };
 		784DAA0B2212ED1A006E50B8 /* PlannerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA0A2212ED1A006E50B8 /* PlannerViewControllerSpec.swift */; };
+		784DAA1222131876006E50B8 /* PlannerBusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA1122131876006E50B8 /* PlannerBusinessManager.swift */; };
 		78994512220D097800115752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994511220D097800115752 /* AppDelegate.swift */; };
 		78994514220D097800115752 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994513220D097800115752 /* PlannerViewController.swift */; };
 		78994517220D097800115752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78994515220D097800115752 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		784DAA06221205BB006E50B8 /* PlannerViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModelSpec.swift; sourceTree = "<group>"; };
 		784DAA0822121A94006E50B8 /* MockPlannerViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlannerViewModelDelegate.swift; sourceTree = "<group>"; };
 		784DAA0A2212ED1A006E50B8 /* PlannerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewControllerSpec.swift; sourceTree = "<group>"; };
+		784DAA1122131876006E50B8 /* PlannerBusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerBusinessManager.swift; sourceTree = "<group>"; };
 		7899450E220D097800115752 /* VacationPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacationPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78994511220D097800115752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78994513220D097800115752 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		784DAA0F2213182B006E50B8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				789945A2220FF95F00115752 /* Extensions */,
+				784DAA1022131851006E50B8 /* Managers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		784DAA1022131851006E50B8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				784DAA1122131876006E50B8 /* PlannerBusinessManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		78994505220D097700115752 = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +197,7 @@
 		78994510220D097800115752 /* VacationPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				789945A2220FF95F00115752 /* Extensions */,
+				784DAA0F2213182B006E50B8 /* Helpers */,
 				78994546220D0A1600115752 /* UI */,
 				78994545220D0A0200115752 /* Views */,
 				78994544220D09F900115752 /* API */,
@@ -596,6 +615,7 @@
 				7899459D220F215400115752 /* WeatherViewModel.swift in Sources */,
 				7899454F220D16A100115752 /* DailyClimate.swift in Sources */,
 				78994553220D244A00115752 /* VacationPlannerAPI.swift in Sources */,
+				784DAA1222131876006E50B8 /* PlannerBusinessManager.swift in Sources */,
 				78994512220D097800115752 /* AppDelegate.swift in Sources */,
 				7899454B220D0DAB00115752 /* City.swift in Sources */,
 				7899454D220D156400115752 /* Temperature.swift in Sources */,
