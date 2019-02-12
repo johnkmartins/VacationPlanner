@@ -1,0 +1,6 @@
+framework module Pods_VacationPlannerTests {
+  umbrella header "Pods-VacationPlannerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

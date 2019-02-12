@@ -1,0 +1,965 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		784DA9F62211D5CC006E50B8 /* DailyClimateViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DA9F52211D5CC006E50B8 /* DailyClimateViewModelSpec.swift */; };
+		784DA9FA2211EC54006E50B8 /* CityViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DA9F92211EC54006E50B8 /* CityViewModelSpec.swift */; };
+		784DA9FC2211ECDF006E50B8 /* MockVacationPlannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DA9FB2211ECDF006E50B8 /* MockVacationPlannerAPI.swift */; };
+		784DAA052212033D006E50B8 /* WeatherViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA042212033D006E50B8 /* WeatherViewModelSpec.swift */; };
+		784DAA07221205BB006E50B8 /* PlannerViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA06221205BB006E50B8 /* PlannerViewModelSpec.swift */; };
+		784DAA0922121A94006E50B8 /* MockPlannerViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA0822121A94006E50B8 /* MockPlannerViewModelDelegate.swift */; };
+		784DAA0B2212ED1A006E50B8 /* PlannerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DAA0A2212ED1A006E50B8 /* PlannerViewControllerSpec.swift */; };
+		78994512220D097800115752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994511220D097800115752 /* AppDelegate.swift */; };
+		78994514220D097800115752 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994513220D097800115752 /* PlannerViewController.swift */; };
+		78994517220D097800115752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78994515220D097800115752 /* Main.storyboard */; };
+		7899451A220D097800115752 /* VacationPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78994518220D097800115752 /* VacationPlanner.xcdatamodeld */; };
+		7899451C220D097C00115752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7899451B220D097C00115752 /* Assets.xcassets */; };
+		7899451F220D097C00115752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7899451D220D097C00115752 /* LaunchScreen.storyboard */; };
+		78994535220D097C00115752 /* VacationPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994534220D097C00115752 /* VacationPlannerUITests.swift */; };
+		7899454B220D0DAB00115752 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899454A220D0DAB00115752 /* City.swift */; };
+		7899454D220D156400115752 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899454C220D156400115752 /* Temperature.swift */; };
+		7899454F220D16A100115752 /* DailyClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899454E220D16A100115752 /* DailyClimate.swift */; };
+		78994551220D186200115752 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994550220D186200115752 /* Weather.swift */; };
+		78994553220D244A00115752 /* VacationPlannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994552220D244A00115752 /* VacationPlannerAPI.swift */; };
+		78994555220D2C2A00115752 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994554220D2C2A00115752 /* Endpoints.swift */; };
+		78994597220F0A6500115752 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994596220F0A6500115752 /* WeatherCollectionViewCell.swift */; };
+		78994599220F1E5E00115752 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78994598220F1E5E00115752 /* CityViewModel.swift */; };
+		7899459B220F20A900115752 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899459A220F20A900115752 /* CityCollectionViewCell.swift */; };
+		7899459D220F215400115752 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899459C220F215400115752 /* WeatherViewModel.swift */; };
+		7899459F220F25E400115752 /* PlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899459E220F25E400115752 /* PlannerViewModel.swift */; };
+		789945A1220FB14B00115752 /* DailyClimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945A0220FB14B00115752 /* DailyClimateViewModel.swift */; };
+		789945A4220FFBAC00115752 /* Date+DaysBetweenDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945A3220FFBAC00115752 /* Date+DaysBetweenDate.swift */; };
+		789945A62211364100115752 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945A52211364100115752 /* BaseCollectionCell.swift */; };
+		789945AC22113D2D00115752 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945AB22113D2D00115752 /* JSONHelper.swift */; };
+		789945B022113F1300115752 /* dailyClimate.json in Resources */ = {isa = PBXBuildFile; fileRef = 789945AD22113F1300115752 /* dailyClimate.json */; };
+		789945B122113F1300115752 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 789945AE22113F1300115752 /* cities.json */; };
+		789945B222113F1300115752 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 789945AF22113F1300115752 /* weather.json */; };
+		789945B42211404C00115752 /* CityModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B32211404C00115752 /* CityModelSpec.swift */; };
+		789945B62211407000115752 /* DailyClimateModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B52211407000115752 /* DailyClimateModelSpec.swift */; };
+		789945B8221140C400115752 /* WeatherModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B7221140C400115752 /* WeatherModelSpec.swift */; };
+		B5AF11EFF897E547B19F226C /* Pods_VacationPlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1FB5716F8BA24BE0460058 /* Pods_VacationPlannerUITests.framework */; };
+		C7A6ADD8B230F8F7FBB5E5D5 /* Pods_VacationPlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F5D22E5E463218E1C05E4 /* Pods_VacationPlannerTests.framework */; };
+		C9E43BB1A7E26C659D5ADAA7 /* Pods_VacationPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6592EDFB5958857EF7631BC0 /* Pods_VacationPlanner.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78994526220D097C00115752 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78994506220D097700115752 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7899450D220D097700115752;
+			remoteInfo = VacationPlanner;
+		};
+		78994531220D097C00115752 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78994506220D097700115752 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7899450D220D097700115752;
+			remoteInfo = VacationPlanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CB39B35825B4F72AF5F0F84 /* Pods-VacationPlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerUITests/Pods-VacationPlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B63FF348F510B3DF7F2ABD9 /* Pods-VacationPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlanner/Pods-VacationPlanner.debug.xcconfig"; sourceTree = "<group>"; };
+		6592EDFB5958857EF7631BC0 /* Pods_VacationPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacationPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B2471F551C17373345CEA4 /* Pods-VacationPlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerUITests/Pods-VacationPlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		784DA9F52211D5CC006E50B8 /* DailyClimateViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClimateViewModelSpec.swift; sourceTree = "<group>"; };
+		784DA9F92211EC54006E50B8 /* CityViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelSpec.swift; sourceTree = "<group>"; };
+		784DA9FB2211ECDF006E50B8 /* MockVacationPlannerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVacationPlannerAPI.swift; sourceTree = "<group>"; };
+		784DAA042212033D006E50B8 /* WeatherViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelSpec.swift; sourceTree = "<group>"; };
+		784DAA06221205BB006E50B8 /* PlannerViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModelSpec.swift; sourceTree = "<group>"; };
+		784DAA0822121A94006E50B8 /* MockPlannerViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlannerViewModelDelegate.swift; sourceTree = "<group>"; };
+		784DAA0A2212ED1A006E50B8 /* PlannerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewControllerSpec.swift; sourceTree = "<group>"; };
+		7899450E220D097800115752 /* VacationPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacationPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78994511220D097800115752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78994513220D097800115752 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
+		78994516220D097800115752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78994519220D097800115752 /* VacationPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VacationPlanner.xcdatamodel; sourceTree = "<group>"; };
+		7899451B220D097C00115752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7899451E220D097C00115752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78994520220D097C00115752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78994525220D097C00115752 /* VacationPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VacationPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7899452B220D097C00115752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78994530220D097C00115752 /* VacationPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VacationPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78994534220D097C00115752 /* VacationPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationPlannerUITests.swift; sourceTree = "<group>"; };
+		78994536220D097C00115752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7899454A220D0DAB00115752 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		7899454C220D156400115752 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		7899454E220D16A100115752 /* DailyClimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClimate.swift; sourceTree = "<group>"; };
+		78994550220D186200115752 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		78994552220D244A00115752 /* VacationPlannerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationPlannerAPI.swift; sourceTree = "<group>"; };
+		78994554220D2C2A00115752 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		78994596220F0A6500115752 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		78994598220F1E5E00115752 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		7899459A220F20A900115752 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		7899459C220F215400115752 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		7899459E220F25E400115752 /* PlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModel.swift; sourceTree = "<group>"; };
+		789945A0220FB14B00115752 /* DailyClimateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClimateViewModel.swift; sourceTree = "<group>"; };
+		789945A3220FFBAC00115752 /* Date+DaysBetweenDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DaysBetweenDate.swift"; sourceTree = "<group>"; };
+		789945A52211364100115752 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
+		789945AB22113D2D00115752 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		789945AD22113F1300115752 /* dailyClimate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dailyClimate.json; sourceTree = "<group>"; };
+		789945AE22113F1300115752 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		789945AF22113F1300115752 /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
+		789945B32211404C00115752 /* CityModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModelSpec.swift; sourceTree = "<group>"; };
+		789945B52211407000115752 /* DailyClimateModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClimateModelSpec.swift; sourceTree = "<group>"; };
+		789945B7221140C400115752 /* WeatherModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelSpec.swift; sourceTree = "<group>"; };
+		7A7F5D22E5E463218E1C05E4 /* Pods_VacationPlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacationPlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8774406D565BB498B9346F08 /* Pods-VacationPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlanner/Pods-VacationPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		ADB661A46424BA7427982C3F /* Pods-VacationPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA3981BBF03774A56D68ABC8 /* Pods-VacationPlannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests.release.xcconfig"; sourceTree = "<group>"; };
+		CB1FB5716F8BA24BE0460058 /* Pods_VacationPlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacationPlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7899450B220D097700115752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E43BB1A7E26C659D5ADAA7 /* Pods_VacationPlanner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78994522220D097C00115752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6ADD8B230F8F7FBB5E5D5 /* Pods_VacationPlannerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7899452D220D097C00115752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AF11EFF897E547B19F226C /* Pods_VacationPlannerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		784DAA0E2212F72D006E50B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				784DAA0A2212ED1A006E50B8 /* PlannerViewControllerSpec.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78994505220D097700115752 = {
+			isa = PBXGroup;
+			children = (
+				78994510220D097800115752 /* VacationPlanner */,
+				78994528220D097C00115752 /* VacationPlannerTests */,
+				78994533220D097C00115752 /* VacationPlannerUITests */,
+				7899450F220D097800115752 /* Products */,
+				BCA0F9DC04F8C767527623E2 /* Pods */,
+				9F21065E1103828B52831B93 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7899450F220D097800115752 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7899450E220D097800115752 /* VacationPlanner.app */,
+				78994525220D097C00115752 /* VacationPlannerTests.xctest */,
+				78994530220D097C00115752 /* VacationPlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78994510220D097800115752 /* VacationPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				789945A2220FF95F00115752 /* Extensions */,
+				78994546220D0A1600115752 /* UI */,
+				78994545220D0A0200115752 /* Views */,
+				78994544220D09F900115752 /* API */,
+				78994543220D09F000115752 /* ViewModels */,
+				78994542220D09EA00115752 /* Models */,
+				78994511220D097800115752 /* AppDelegate.swift */,
+				7899451B220D097C00115752 /* Assets.xcassets */,
+				78994520220D097C00115752 /* Info.plist */,
+				78994518220D097800115752 /* VacationPlanner.xcdatamodeld */,
+			);
+			path = VacationPlanner;
+			sourceTree = "<group>";
+		};
+		78994528220D097C00115752 /* VacationPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				784DAA0E2212F72D006E50B8 /* Controller */,
+				789945AA22113CE600115752 /* ViewModelsSpec */,
+				789945A822113CCB00115752 /* ModelsSpec */,
+				789945A922113CDB00115752 /* Mocks */,
+				789945A722113CB000115752 /* JSONMocks */,
+				7899452B220D097C00115752 /* Info.plist */,
+			);
+			path = VacationPlannerTests;
+			sourceTree = "<group>";
+		};
+		78994533220D097C00115752 /* VacationPlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				78994534220D097C00115752 /* VacationPlannerUITests.swift */,
+				78994536220D097C00115752 /* Info.plist */,
+			);
+			path = VacationPlannerUITests;
+			sourceTree = "<group>";
+		};
+		78994542220D09EA00115752 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7899454A220D0DAB00115752 /* City.swift */,
+				7899454E220D16A100115752 /* DailyClimate.swift */,
+				7899454C220D156400115752 /* Temperature.swift */,
+				78994550220D186200115752 /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78994543220D09F000115752 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				78994598220F1E5E00115752 /* CityViewModel.swift */,
+				7899459C220F215400115752 /* WeatherViewModel.swift */,
+				7899459E220F25E400115752 /* PlannerViewModel.swift */,
+				789945A0220FB14B00115752 /* DailyClimateViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		78994544220D09F900115752 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				78994552220D244A00115752 /* VacationPlannerAPI.swift */,
+				78994554220D2C2A00115752 /* Endpoints.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		78994545220D0A0200115752 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78994548220D0A3500115752 /* Cells */,
+				78994547220D0A2400115752 /* Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		78994546220D0A1600115752 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				78994549220D0A6A00115752 /* Storyboards */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		78994547220D0A2400115752 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				78994513220D097800115752 /* PlannerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		78994548220D0A3500115752 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				789945A52211364100115752 /* BaseCollectionCell.swift */,
+				7899459A220F20A900115752 /* CityCollectionViewCell.swift */,
+				78994596220F0A6500115752 /* WeatherCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		78994549220D0A6A00115752 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				78994515220D097800115752 /* Main.storyboard */,
+				7899451D220D097C00115752 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		789945A2220FF95F00115752 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				789945A3220FFBAC00115752 /* Date+DaysBetweenDate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		789945A722113CB000115752 /* JSONMocks */ = {
+			isa = PBXGroup;
+			children = (
+				789945AE22113F1300115752 /* cities.json */,
+				789945AD22113F1300115752 /* dailyClimate.json */,
+				789945AF22113F1300115752 /* weather.json */,
+				789945AB22113D2D00115752 /* JSONHelper.swift */,
+			);
+			path = JSONMocks;
+			sourceTree = "<group>";
+		};
+		789945A822113CCB00115752 /* ModelsSpec */ = {
+			isa = PBXGroup;
+			children = (
+				789945B32211404C00115752 /* CityModelSpec.swift */,
+				789945B52211407000115752 /* DailyClimateModelSpec.swift */,
+				789945B7221140C400115752 /* WeatherModelSpec.swift */,
+			);
+			path = ModelsSpec;
+			sourceTree = "<group>";
+		};
+		789945A922113CDB00115752 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				784DA9FB2211ECDF006E50B8 /* MockVacationPlannerAPI.swift */,
+				784DAA0822121A94006E50B8 /* MockPlannerViewModelDelegate.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		789945AA22113CE600115752 /* ViewModelsSpec */ = {
+			isa = PBXGroup;
+			children = (
+				784DA9F52211D5CC006E50B8 /* DailyClimateViewModelSpec.swift */,
+				784DA9F92211EC54006E50B8 /* CityViewModelSpec.swift */,
+				784DAA042212033D006E50B8 /* WeatherViewModelSpec.swift */,
+				784DAA06221205BB006E50B8 /* PlannerViewModelSpec.swift */,
+			);
+			path = ViewModelsSpec;
+			sourceTree = "<group>";
+		};
+		9F21065E1103828B52831B93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6592EDFB5958857EF7631BC0 /* Pods_VacationPlanner.framework */,
+				7A7F5D22E5E463218E1C05E4 /* Pods_VacationPlannerTests.framework */,
+				CB1FB5716F8BA24BE0460058 /* Pods_VacationPlannerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCA0F9DC04F8C767527623E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B63FF348F510B3DF7F2ABD9 /* Pods-VacationPlanner.debug.xcconfig */,
+				8774406D565BB498B9346F08 /* Pods-VacationPlanner.release.xcconfig */,
+				ADB661A46424BA7427982C3F /* Pods-VacationPlannerTests.debug.xcconfig */,
+				CA3981BBF03774A56D68ABC8 /* Pods-VacationPlannerTests.release.xcconfig */,
+				77B2471F551C17373345CEA4 /* Pods-VacationPlannerUITests.debug.xcconfig */,
+				1CB39B35825B4F72AF5F0F84 /* Pods-VacationPlannerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7899450D220D097700115752 /* VacationPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78994539220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlanner" */;
+			buildPhases = (
+				FEF74B6C0F40C548E12304B1 /* [CP] Check Pods Manifest.lock */,
+				7899450A220D097700115752 /* Sources */,
+				7899450B220D097700115752 /* Frameworks */,
+				7899450C220D097700115752 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VacationPlanner;
+			productName = VacationPlanner;
+			productReference = 7899450E220D097800115752 /* VacationPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78994524220D097C00115752 /* VacationPlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7899453C220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlannerTests" */;
+			buildPhases = (
+				4918AA9B5674DD058DF8AA0E /* [CP] Check Pods Manifest.lock */,
+				78994521220D097C00115752 /* Sources */,
+				78994522220D097C00115752 /* Frameworks */,
+				78994523220D097C00115752 /* Resources */,
+				B8F7A68AE46E0BBF17EE1B28 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78994527220D097C00115752 /* PBXTargetDependency */,
+			);
+			name = VacationPlannerTests;
+			productName = VacationPlannerTests;
+			productReference = 78994525220D097C00115752 /* VacationPlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7899452F220D097C00115752 /* VacationPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7899453F220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlannerUITests" */;
+			buildPhases = (
+				E28D17AEB3C4DF67C0AB0DC8 /* [CP] Check Pods Manifest.lock */,
+				7899452C220D097C00115752 /* Sources */,
+				7899452D220D097C00115752 /* Frameworks */,
+				7899452E220D097C00115752 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78994532220D097C00115752 /* PBXTargetDependency */,
+			);
+			name = VacationPlannerUITests;
+			productName = VacationPlannerUITests;
+			productReference = 78994530220D097C00115752 /* VacationPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78994506220D097700115752 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "John Kennedy Martins Alves";
+				TargetAttributes = {
+					7899450D220D097700115752 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					78994524220D097C00115752 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7899450D220D097700115752;
+					};
+					7899452F220D097C00115752 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7899450D220D097700115752;
+					};
+				};
+			};
+			buildConfigurationList = 78994509220D097700115752 /* Build configuration list for PBXProject "VacationPlanner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78994505220D097700115752;
+			productRefGroup = 7899450F220D097800115752 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7899450D220D097700115752 /* VacationPlanner */,
+				78994524220D097C00115752 /* VacationPlannerTests */,
+				7899452F220D097C00115752 /* VacationPlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7899450C220D097700115752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7899451F220D097C00115752 /* LaunchScreen.storyboard in Resources */,
+				7899451C220D097C00115752 /* Assets.xcassets in Resources */,
+				78994517220D097800115752 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78994523220D097C00115752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789945B122113F1300115752 /* cities.json in Resources */,
+				789945B022113F1300115752 /* dailyClimate.json in Resources */,
+				789945B222113F1300115752 /* weather.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7899452E220D097C00115752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4918AA9B5674DD058DF8AA0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VacationPlannerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F7A68AE46E0BBF17EE1B28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E28D17AEB3C4DF67C0AB0DC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VacationPlannerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF74B6C0F40C548E12304B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VacationPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7899450A220D097700115752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78994514220D097800115752 /* PlannerViewController.swift in Sources */,
+				7899459D220F215400115752 /* WeatherViewModel.swift in Sources */,
+				7899454F220D16A100115752 /* DailyClimate.swift in Sources */,
+				78994553220D244A00115752 /* VacationPlannerAPI.swift in Sources */,
+				78994512220D097800115752 /* AppDelegate.swift in Sources */,
+				7899454B220D0DAB00115752 /* City.swift in Sources */,
+				7899454D220D156400115752 /* Temperature.swift in Sources */,
+				789945A4220FFBAC00115752 /* Date+DaysBetweenDate.swift in Sources */,
+				78994599220F1E5E00115752 /* CityViewModel.swift in Sources */,
+				78994597220F0A6500115752 /* WeatherCollectionViewCell.swift in Sources */,
+				789945A1220FB14B00115752 /* DailyClimateViewModel.swift in Sources */,
+				789945A62211364100115752 /* BaseCollectionCell.swift in Sources */,
+				7899459F220F25E400115752 /* PlannerViewModel.swift in Sources */,
+				7899451A220D097800115752 /* VacationPlanner.xcdatamodeld in Sources */,
+				7899459B220F20A900115752 /* CityCollectionViewCell.swift in Sources */,
+				78994555220D2C2A00115752 /* Endpoints.swift in Sources */,
+				78994551220D186200115752 /* Weather.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78994521220D097C00115752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789945B62211407000115752 /* DailyClimateModelSpec.swift in Sources */,
+				784DA9FC2211ECDF006E50B8 /* MockVacationPlannerAPI.swift in Sources */,
+				789945B42211404C00115752 /* CityModelSpec.swift in Sources */,
+				784DAA07221205BB006E50B8 /* PlannerViewModelSpec.swift in Sources */,
+				784DAA0922121A94006E50B8 /* MockPlannerViewModelDelegate.swift in Sources */,
+				784DAA0B2212ED1A006E50B8 /* PlannerViewControllerSpec.swift in Sources */,
+				789945B8221140C400115752 /* WeatherModelSpec.swift in Sources */,
+				784DA9F62211D5CC006E50B8 /* DailyClimateViewModelSpec.swift in Sources */,
+				784DAA052212033D006E50B8 /* WeatherViewModelSpec.swift in Sources */,
+				789945AC22113D2D00115752 /* JSONHelper.swift in Sources */,
+				784DA9FA2211EC54006E50B8 /* CityViewModelSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7899452C220D097C00115752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78994535220D097C00115752 /* VacationPlannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78994527220D097C00115752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7899450D220D097700115752 /* VacationPlanner */;
+			targetProxy = 78994526220D097C00115752 /* PBXContainerItemProxy */;
+		};
+		78994532220D097C00115752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7899450D220D097700115752 /* VacationPlanner */;
+			targetProxy = 78994531220D097C00115752 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78994515220D097800115752 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78994516220D097800115752 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7899451D220D097C00115752 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7899451E220D097C00115752 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78994537220D097C00115752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78994538220D097C00115752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7899453A220D097C00115752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B63FF348F510B3DF7F2ABD9 /* Pods-VacationPlanner.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7899453B220D097C00115752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8774406D565BB498B9346F08 /* Pods-VacationPlanner.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7899453D220D097C00115752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB661A46424BA7427982C3F /* Pods-VacationPlannerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VacationPlanner.app/VacationPlanner";
+			};
+			name = Debug;
+		};
+		7899453E220D097C00115752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3981BBF03774A56D68ABC8 /* Pods-VacationPlannerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VacationPlanner.app/VacationPlanner";
+			};
+			name = Release;
+		};
+		78994540220D097C00115752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77B2471F551C17373345CEA4 /* Pods-VacationPlannerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VacationPlanner;
+			};
+			name = Debug;
+		};
+		78994541220D097C00115752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CB39B35825B4F72AF5F0F84 /* Pods-VacationPlannerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VacationPlannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkma.VacationPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VacationPlanner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78994509220D097700115752 /* Build configuration list for PBXProject "VacationPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78994537220D097C00115752 /* Debug */,
+				78994538220D097C00115752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78994539220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7899453A220D097C00115752 /* Debug */,
+				7899453B220D097C00115752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7899453C220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7899453D220D097C00115752 /* Debug */,
+				7899453E220D097C00115752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7899453F220D097C00115752 /* Build configuration list for PBXNativeTarget "VacationPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78994540220D097C00115752 /* Debug */,
+				78994541220D097C00115752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78994518220D097800115752 /* VacationPlanner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78994519220D097800115752 /* VacationPlanner.xcdatamodel */,
+			);
+			currentVersion = 78994519220D097800115752 /* VacationPlanner.xcdatamodel */;
+			path = VacationPlanner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 78994506220D097700115752 /* Project object */;
+}
