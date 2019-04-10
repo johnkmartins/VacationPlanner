@@ -90,11 +90,15 @@ class PlannerViewController: UIViewController {
         }
     }
     
+    private func handlerTryAgain(alert: UIAlertAction!) {
+        viewModel.getPlannerInfo()
+    }
+    
     private func showAlertWith(title: String, msg: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Tente novamente", style: .default, handler: self.handlerTryAgain))
             self.present(alert, animated: true)
         }
     }

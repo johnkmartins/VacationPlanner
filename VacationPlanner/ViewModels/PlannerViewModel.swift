@@ -17,6 +17,9 @@ protocol PlannerViewModelDelegate: class {
 
 class PlannerViewModel {
     
+    private let TIMEOUT_SECONDS = 10
+    private let ERROR_MSG = "Um Erro aconteceu ao recuperar os dados"
+    
     private var selectedWeathers: [WeatherViewModel] = [WeatherViewModel]()
     private var dailyClimateList: [DailyClimate]?
     private var selectedCity: CityViewModel?
@@ -26,6 +29,10 @@ class PlannerViewModel {
     private var cityList: [City]?
     private var apiPlanner: VacationPlannerAPI
     private var managerPlannerBusiness: PlannerBusinessManager
+    private var errorGetCities = false
+    private var errorGetWeathers = false
+    
+    private let dispatchGroup = DispatchGroup()
     
     // MARK: - Public Atributes
     weak var delegate: PlannerViewModelDelegate?
@@ -89,7 +96,9 @@ class PlannerViewModel {
     }
     
     func getPlannerInfo() {
-        getCities(nextStep: getWeathers)
+        getCities()
+        getWeathers()
+        handleDispatchGroup()
     }
     
     func getDailyClimates() {
@@ -109,30 +118,52 @@ class PlannerViewModel {
     }
     
     // MARK: - Private Functions
-    private func getCities(nextStep: @escaping (()->(Void)) = {}) {
+    private func getCities() {
+        dispatchGroup.enter()
         apiPlanner.getCities() { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let listOfCities):
                 self.cityList = listOfCities
-                nextStep()
-            case .error(let errorMsg):
-                if let del = self.delegate { del.handleErrorWith(msg: errorMsg) }
+                self.errorGetCities = false
+            case .error(_):
+                self.errorGetCities = true
             }
+            self.dispatchGroup.leave()
         }
     }
     
     private func getWeathers() {
-       apiPlanner.getWeathers() { [weak self] result in
+        dispatchGroup.enter()
+        apiPlanner.getWeathers() { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let listOfWeathers):
                 self.weatherList = listOfWeathers
-                if let del = self.delegate { del.updatePlannerData() }
-            case .error(let errorMsg):
-                if let del = self.delegate { del.handleErrorWith(msg: errorMsg) }
+                self.errorGetWeathers = false
+            case .error(_):
+               self.errorGetWeathers = true
+            }
+            self.dispatchGroup.leave()
+        }
+    }
+    
+    private func handleDispatchGroup() {
+        let timeout = DispatchTime.now() + .seconds(TIMEOUT_SECONDS)
+        
+        if dispatchGroup.wait(timeout: timeout) == .timedOut {
+            delegate?.handleErrorWith(msg: ERROR_MSG)
+        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            guard let self = self else { return }
+            
+            if self.errorGetCities || self.errorGetWeathers {
+                self.delegate?.handleErrorWith(msg: self.ERROR_MSG)
+            } else {
+                self.delegate?.updatePlannerData()
             }
         }
     }
