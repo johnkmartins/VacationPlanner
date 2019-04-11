@@ -41,16 +41,24 @@ class DailyClimateViewModel {
         return dateFormatter.string(from: dt)
     }
     
-    var maxTemperature: String {
+    var maxTemperature: Int? {
+        return dailyClimate.temperature?.max
+    }
+    
+    var minTemperature: Int? {
+        return dailyClimate.temperature?.min
+    }
+    
+    var maxTemperatureDesc: String {
         if let temp = dailyClimate.temperature, let max = temp.max {
-            return String(max)
+            return String(max) + " " + unitTemperature
         }
         return ""
     }
     
-    var minTemperature: String {
+    var minTemperatureDesc: String {
         if let temp = dailyClimate.temperature, let min = temp.min {
-            return String(min)
+            return String(min) + " " + unitTemperature
         }
         return ""
     }
