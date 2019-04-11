@@ -59,14 +59,12 @@ class PlannerBusinessManager {
         var group = [DailyClimateViewModel]()
         
         for (i, climate) in list.enumerated() {
-            if i+1 <= list.count - 1, datesAreSequencial(first: climate.date, second: list[i+1].date) {
-                group.isEmpty ? group.append(contentsOf: [climate, list[i+1]]) :  group.append(list[i+1])
-            } else if group.count >= daysOfVacation {
-                listOfGroups.append(group)
-                group.removeAll()
-            } else {
-                group.removeAll()
+            if let next = list.nextElementTo(i), datesAreSequencial(first: climate.date, second: next.date) {
+                group.isEmpty ? group.append(contentsOf: [climate, next]) :  group.append(next)
+                continue
             }
+            if group.count >= daysOfVacation { listOfGroups.append(group) }
+            group.removeAll()
         }
         return listOfGroups
     }

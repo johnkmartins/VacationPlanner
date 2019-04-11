@@ -43,6 +43,7 @@
 		789945B42211404C00115752 /* CityModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B32211404C00115752 /* CityModelSpec.swift */; };
 		789945B62211407000115752 /* DailyClimateModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B52211407000115752 /* DailyClimateModelSpec.swift */; };
 		789945B8221140C400115752 /* WeatherModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789945B7221140C400115752 /* WeatherModelSpec.swift */; };
+		7B24F521225FBE4700A06104 /* Array+NextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B24F520225FBE4700A06104 /* Array+NextElement.swift */; };
 		B5AF11EFF897E547B19F226C /* Pods_VacationPlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1FB5716F8BA24BE0460058 /* Pods_VacationPlannerUITests.framework */; };
 		C7A6ADD8B230F8F7FBB5E5D5 /* Pods_VacationPlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F5D22E5E463218E1C05E4 /* Pods_VacationPlannerTests.framework */; };
 		C9E43BB1A7E26C659D5ADAA7 /* Pods_VacationPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6592EDFB5958857EF7631BC0 /* Pods_VacationPlanner.framework */; };
@@ -113,6 +114,7 @@
 		789945B52211407000115752 /* DailyClimateModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClimateModelSpec.swift; sourceTree = "<group>"; };
 		789945B7221140C400115752 /* WeatherModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelSpec.swift; sourceTree = "<group>"; };
 		7A7F5D22E5E463218E1C05E4 /* Pods_VacationPlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacationPlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B24F520225FBE4700A06104 /* Array+NextElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+NextElement.swift"; sourceTree = "<group>"; };
 		8774406D565BB498B9346F08 /* Pods-VacationPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlanner/Pods-VacationPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		ADB661A46424BA7427982C3F /* Pods-VacationPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA3981BBF03774A56D68ABC8 /* Pods-VacationPlannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationPlannerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacationPlannerTests/Pods-VacationPlannerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				789945A3220FFBAC00115752 /* Date+DaysBetweenDate.swift */,
+				7B24F520225FBE4700A06104 /* Array+NextElement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				789945A4220FFBAC00115752 /* Date+DaysBetweenDate.swift in Sources */,
 				78994599220F1E5E00115752 /* CityViewModel.swift in Sources */,
 				78994597220F0A6500115752 /* WeatherCollectionViewCell.swift in Sources */,
+				7B24F521225FBE4700A06104 /* Array+NextElement.swift in Sources */,
 				789945A1220FB14B00115752 /* DailyClimateViewModel.swift in Sources */,
 				789945A62211364100115752 /* BaseCollectionCell.swift in Sources */,
 				7899459F220F25E400115752 /* PlannerViewModel.swift in Sources */,

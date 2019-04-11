@@ -94,11 +94,11 @@ class PlannerViewController: UIViewController {
         viewModel.getPlannerInfo()
     }
     
-    private func showAlertWith(title: String, msg: String) {
+    private func showAlertWith(title: String, msg: String, buttonTitle: String, handlerButton: ((UIAlertAction) -> Void)? = nil) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Tente novamente", style: .default, handler: self.handlerTryAgain))
+            alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: handlerButton))
             self.present(alert, animated: true)
         }
     }
@@ -121,7 +121,7 @@ extension PlannerViewController: PlannerViewModelDelegate {
     func onDailyClimatesReceived() {
         showLoading(false)
         let dates = viewModel.getVacationDatesFormated()
-        dates.isEmpty ? showAlertWith(title: "Oops 😕", msg: "Sorry, we don't find any results for your search.") : showAlertWith(title: "Let's travel 😀 ✈️ 🚎 🛳", msg: dates)
+        dates.isEmpty ? showAlertWith(title: "Oops 😕", msg: "Não foi achado nenhum resultado para sua busca.", buttonTitle: "Entendi, vou fazer outra pesquisa") : showAlertWith(title: "Bote o pé na estrada\n 😀 ✈️ 🚎 🛳", msg: dates, buttonTitle: "Massa!")
     }
     
     func updatePlannerData() {
@@ -131,7 +131,7 @@ extension PlannerViewController: PlannerViewModelDelegate {
     
     func handleErrorWith(msg: String) {
         showLoading(false)
-        showAlertWith(title: "Oops 😣", msg: msg)
+        showAlertWith(title: "Oops 😣", msg: msg, buttonTitle: "Tente novamente", handlerButton: handlerTryAgain)
     }
 }
 
